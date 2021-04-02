@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+import StartTheGame.PlantsVsZombies;
+import StartTheGame.SoundAndMusic;
 import com.sun.tools.javac.Main;
 import jaco.mp3.player.MP3Player;
 
@@ -24,7 +26,8 @@ public class Dashboard extends javax.swing.JFrame {
     private Font Dancing;
     public Dashboard() {
         initFont();
-        mp3Player.play();
+        BGM.StartPlay_BGM();
+//        mp3Player.play();
         initComponents();
     }
     public void initFont()
@@ -96,9 +99,14 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        ButtonStart.setFont(Dancing.deriveFont(Font.BOLD,18));
+        ButtonStart.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ButtonStart.setForeground(new java.awt.Color(51, 0, 51));
         ButtonStart.setText("Start the Game");
+        ButtonStart.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonStartMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -153,13 +161,14 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    SoundAndMusic BGM = new SoundAndMusic("music/gaming.wav");
     private void ButtonPlayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonPlayMouseClicked
-        mp3Player.play();
+
+
     }//GEN-LAST:event_ButtonPlayMouseClicked
 
     private void ButtonPauseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonPauseMouseClicked
-        mp3Player.pause();
+        BGM.StopPlay_BGM();
     }//GEN-LAST:event_ButtonPauseMouseClicked
 
     private void ButtonLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonLogoutMouseClicked
@@ -167,6 +176,11 @@ public class Dashboard extends javax.swing.JFrame {
         this.setVisible(false);
         mainMenu.setVisible(true);
     }//GEN-LAST:event_ButtonLogoutMouseClicked
+
+    private void ButtonStartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonStartMouseClicked
+        this.setVisible(false);
+        PlantsVsZombies plantsVsZombies = new PlantsVsZombies();
+    }//GEN-LAST:event_ButtonStartMouseClicked
 
     /**
      * @param args the command line arguments

@@ -5,6 +5,7 @@
  */
 
 import Config.User;
+import StartTheGame.PlantsVsZombies;
 
 import javax.swing.*;
 
@@ -139,9 +140,8 @@ public class Login extends javax.swing.JFrame {
         var password = String.valueOf(TextFieldPassword.getPassword());
         User user = Database.getUserByUsername(username);
         if (user != null && user.password.equals(password)) {
-            Dashboard dashboard = new Dashboard();
             this.setVisible(false);
-            dashboard.setVisible(true);
+            PlantsVsZombies plantsVsZombies = new PlantsVsZombies();
         }else{
             JOptionPane.showMessageDialog(null,"Username or Password is Wrong " +
                     "Please try again");

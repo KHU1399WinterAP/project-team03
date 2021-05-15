@@ -1,5 +1,6 @@
 package animations;
 
+import Config.ImageConfig;
 import utils.SoundAndMusic;
 
 import javax.swing.*;
@@ -37,7 +38,7 @@ public class DarkZombie extends Zombie {
     }
     public void move_show(Graphics g)
     {
-        g.drawImage((new ImageIcon("Image/darkzombie/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.darkZombieFrame +page+".png")).getImage(), x, y, null);
 
     }
     public void move_anime() {
@@ -68,7 +69,7 @@ public class DarkZombie extends Zombie {
         }
     }
     public void eat_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/darkzombieeat/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.darkZombieEatFrame+page+".png")).getImage(), x, y, null);
 
     }
     public void eat_action(Plants[][] plants) {
@@ -100,8 +101,8 @@ public class DarkZombie extends Zombie {
     }
     public void die_show(Graphics g) {
 
-        g.drawImage((new ImageIcon("Image/darkzombiedie/Frame"+page+".png")).getImage(), x, y, null);
-        g.drawImage((new ImageIcon("Image/darkzombiehead/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.darkZombieDieFrame+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.darkZombieDieFrame+page+".png")).getImage(), x, y, null);
 
     }
     public void die_anime() {
@@ -126,7 +127,7 @@ public class DarkZombie extends Zombie {
     }
     public void imove_show(Graphics g)
     {
-        g.drawImage((new ImageIcon("Image/darkzombie/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.darkZombieFrame+page+".png")).getImage(), x, y, null);
     }
     public void imove_anime() {
         if(page==17){page=0;}
@@ -165,7 +166,7 @@ public class DarkZombie extends Zombie {
         }
     }
     public void ieat_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/darkzombieeat/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.darkZombieEatFrame+page+".png")).getImage(), x, y, null);
 
 
     }

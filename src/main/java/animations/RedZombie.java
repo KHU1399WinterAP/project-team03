@@ -1,5 +1,6 @@
 package animations;
 
+import Config.ImageConfig;
 import utils.SoundAndMusic;
 
 import javax.swing.*;
@@ -37,7 +38,7 @@ public class RedZombie extends Zombie {
     }
     public void move_show(Graphics g)
     {
-        g.drawImage((new ImageIcon("Image/redzombie/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.redZombie +page+".png")).getImage(), x, y, null);
     }
     public void move_anime() {
         if(page==17)page=0;
@@ -67,7 +68,7 @@ public class RedZombie extends Zombie {
         }
     }
     public void eat_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/redzombieeat/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.redZombieEat+page+".png")).getImage(), x, y, null);
 
     }
     public void eat_action(Plants[][] plants) {
@@ -99,8 +100,8 @@ public class RedZombie extends Zombie {
     }
     public void die_show(Graphics g) {
 
-        g.drawImage((new ImageIcon("Image/redzombiedie/Frame"+page+".png")).getImage(), x, y, null);
-        g.drawImage((new ImageIcon("Image/redzombiehead/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.redZombieDie+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.redZombieHead+page+".png")).getImage(), x, y, null);
 
     }
     public void die_anime() {
@@ -124,7 +125,7 @@ public class RedZombie extends Zombie {
     }
     public void imove_show(Graphics g)
     {
-        g.drawImage((new ImageIcon("Image/redzombie/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.redZombie+page+".png")).getImage(), x, y, null);
     }
     public void imove_anime() {
         if(page==17)page=0;
@@ -161,7 +162,7 @@ public class RedZombie extends Zombie {
         }
     }
     public void ieat_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/redzombieeat/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.redZombieEat+page+".png")).getImage(), x, y, null);
 
 
     }

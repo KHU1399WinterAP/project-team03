@@ -1,5 +1,6 @@
 package animations;
 
+import Config.ImageConfig;
 import utils.SoundAndMusic;
 
 import javax.swing.*;
@@ -28,7 +29,7 @@ public class Bullet {
         return false;
     }
     private void flyimage(Graphics g) {
-        Image tu = (new ImageIcon("Image/bullet/bullet.png")).getImage();
+        Image tu = (new ImageIcon(ImageConfig.bullet)).getImage();
         g.drawImage(tu, x+58, y+80, null);
     }
 

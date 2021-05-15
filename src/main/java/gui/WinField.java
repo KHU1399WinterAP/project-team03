@@ -5,6 +5,8 @@
  */
 package gui;
 
+import Config.ImageConfig;
+
 /**
  *
  * @author danae
@@ -43,7 +45,7 @@ public class WinField extends javax.swing.JFrame {
         });
         getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, 390, 80));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/win.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(ImageConfig.winField))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 591));
 
         pack();

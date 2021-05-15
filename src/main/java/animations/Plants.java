@@ -1,5 +1,7 @@
 package animations;
 
+import Config.ImageConfig;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -64,7 +66,7 @@ public class Plants {
     }
 
     public void shooter_move_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/peashooter/Frame" + page + ".png")).getImage(), 34 + x, 81 + y, null);
+        g.drawImage((new ImageIcon(ImageConfig.peashooterFrame + page + ".png")).getImage(), 34 + x, 81 + y, null);
     }
 
     public void shooter_move_anime(ArrayList<Bullet> BulletList) {
@@ -85,7 +87,7 @@ public class Plants {
     public void shopter_put_show(Graphics  g) {
         if(state==3)
         {
-            Image tu = (new ImageIcon("Image/peashooter/Frame0.png")).getImage();
+            Image tu = (new ImageIcon(ImageConfig.peashooterFrame2)).getImage();
             g.drawImage(tu,x, y, null);
             Image tu1 = (new ImageIcon("Image/plantput/pea.png")).getImage();
             g.drawImage(tu1,34+((x-34)/80)*80, 81+((y-81)/100)*100, null);
@@ -96,7 +98,7 @@ public class Plants {
         state=1;
     }
     public void ice_move_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/icepeashooter/Frame"+page+".png")).getImage(),34 +x, 81+y, null);
+        g.drawImage((new ImageIcon(ImageConfig.icePeashooterFrame+page+".png")).getImage(),34 +x, 81+y, null);
     }
     public void ice_move_anime(ArrayList<IceBullet> IceBulletList) {
         if(page==14) page=0;
@@ -116,7 +118,7 @@ public class Plants {
     public void ice_put_show(Graphics  g) {
         if(state==3)
         {
-            Image tu = (new ImageIcon("Image/icepeashooter/Frame0.png")).getImage();
+            Image tu = (new ImageIcon(ImageConfig.icePeashooterFrame2)).getImage();
             g.drawImage(tu,x, y, null);
             Image tu1 = (new ImageIcon("Image/plantput/ice.png")).getImage();
             g.drawImage(tu1,34+((x-34)/80)*80, 81+((y-81)/100)*100, null);
@@ -127,7 +129,7 @@ public class Plants {
         state=1;
     }
     public void sun_move_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/sunflower/Frame"+page+".png")).getImage(),34 +x, 81+y, null);
+        g.drawImage((new ImageIcon(ImageConfig.sunflowerFrame+page+".png")).getImage(),34 +x, 81+y, null);
     }
     public void sun_move_anime(ArrayList<Sun> SunList) {
         if(page==17) page=0;
@@ -147,9 +149,9 @@ public class Plants {
     public void sun_put_show(Graphics  g) {
         if(state==3)
         {
-            Image tu = (new ImageIcon("Image/sunflower/Frame0.png")).getImage();
+            Image tu = (new ImageIcon(ImageConfig.sunflowerFrame2)).getImage();
             g.drawImage(tu,x, y, null);
-            Image tu1 = (new ImageIcon("Image/plantput/sun.png")).getImage();
+            Image tu1 = (new ImageIcon(ImageConfig.plantPutSun)).getImage();
             g.drawImage(tu1,34+((x-34)/80)*80, 81+((y-81)/100)*100, null);
         }
     }
@@ -166,7 +168,7 @@ public class Plants {
     private void nut_health_show(Graphics g)
     {
 
-        g.drawImage((new ImageIcon("Image/nut1/Frame"+page+".png")).getImage(),34 +x, 81+y, null);
+        g.drawImage((new ImageIcon(ImageConfig.nutFrame+page+".png")).getImage(),34 +x, 81+y, null);
     }
 
     private void nut_health_move()
@@ -192,7 +194,7 @@ public class Plants {
     private void nut_hurt_show(Graphics g)
     {
 
-        g.drawImage((new ImageIcon("Image/nut2/Frame"+page+".png")).getImage(),34 +x, 81+y, null);
+        g.drawImage((new ImageIcon(ImageConfig.nut2Frame+page+".png")).getImage(),34 +x, 81+y, null);
     }
 
     private void nut_hurt_move()
@@ -219,7 +221,7 @@ public class Plants {
     private void nut_badhurt_show(Graphics g)
     {
 
-        g.drawImage((new ImageIcon("Image/nut3/Frame"+page+".png")).getImage(),34 +x, 81+y, null);
+        g.drawImage((new ImageIcon(ImageConfig.nut3Frame+page+".png")).getImage(),34 +x, 81+y, null);
     }
 
     private void nut_badhurt_move()
@@ -244,9 +246,9 @@ public class Plants {
     public void nut_put_show(Graphics  g) {
         if(state==3)
         {
-            Image tu = (new ImageIcon("Image/nut1/Frame0.png")).getImage();
+            Image tu = (new ImageIcon(ImageConfig.nut1Frame2)).getImage();
             g.drawImage(tu,x, y, null);
-            Image tu1 = (new ImageIcon("Image/plantput/nut.png")).getImage();
+            Image tu1 = (new ImageIcon(ImageConfig.plantPutNut)).getImage();
             g.drawImage(tu1,34+((x-34)/80)*80, 81+((y-81)/100)*100, null);
         }
     }

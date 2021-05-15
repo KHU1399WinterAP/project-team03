@@ -1,5 +1,6 @@
 package animations;
 
+import Config.ImageConfig;
 import utils.SoundAndMusic;
 
 import javax.swing.*;
@@ -31,7 +32,7 @@ public class Sun {
 
     public void paintComponent(Graphics g) {
 
-        g.drawImage((new ImageIcon("Image/sun.png")).getImage(),34+x,81+y,null);
+        g.drawImage((new ImageIcon(ImageConfig.sun)).getImage(),34+x,81+y,null);
     }
 
     public void drop() {

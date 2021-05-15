@@ -5,6 +5,8 @@
  */
 package gui;
 
+import Config.ImageConfig;
+
 /**
  *
  * @author danae
@@ -44,7 +46,7 @@ public class DieField extends javax.swing.JFrame {
         });
         getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 420, 390, 80));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/die.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(ImageConfig.dieField))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 590));
 
         pack();

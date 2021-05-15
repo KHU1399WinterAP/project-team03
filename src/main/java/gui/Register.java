@@ -5,6 +5,7 @@ package gui;/*
  */
 
 import Config.Database;
+import Config.ImageConfig;
 import Config.User;
 import app.MainMenu;
 
@@ -78,7 +79,7 @@ public class Register extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 300, 38));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Plants-vs-Zombies-3.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource(ImageConfig.LoginAndRegister))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-190, -10, 1090, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -1,5 +1,6 @@
 package animations;
 
+import Config.ImageConfig;
 import utils.SoundAndMusic;
 
 import javax.swing.*;
@@ -38,7 +39,7 @@ public class YellowZombie extends Zombie {
     }
     public void move_show(Graphics g)
     {
-        g.drawImage((new ImageIcon("Image/yellowzombie/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.yellowZombie +page+".png")).getImage(), x, y, null);
     }
     public void move_anime() {
         if(page==17)page=0;
@@ -69,7 +70,7 @@ public class YellowZombie extends Zombie {
         }
     }
     public void eat_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/yellowzombieeat/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.yellowZombieEat+page+".png")).getImage(), x, y, null);
 
     }
     public void eat_action(Plants[][] plants) {
@@ -101,8 +102,8 @@ public class YellowZombie extends Zombie {
     }
     public void die_show(Graphics g) {
 
-        g.drawImage((new ImageIcon("Image/yellowzombiedie/Frame"+page+".png")).getImage(), x, y, null);
-        g.drawImage((new ImageIcon("Image/yellowzombiehead/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.yellowZombieDie+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.yellowZombieHead+page+".png")).getImage(), x, y, null);
 
     }
     public void die_anime() {
@@ -126,7 +127,7 @@ public class YellowZombie extends Zombie {
     }
     public void imove_show(Graphics g)
     {
-        g.drawImage((new ImageIcon("Image/yellowzombie/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.yellowZombie+page+".png")).getImage(), x, y, null);
     }
     public void imove_anime() {
         if(page==17)page=0;
@@ -163,7 +164,7 @@ public class YellowZombie extends Zombie {
         }
     }
     public void ieat_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/yellowzombieeat/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.yellowZombieEat+page+".png")).getImage(), x, y, null);
 
 
     }

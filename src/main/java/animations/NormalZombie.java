@@ -1,5 +1,6 @@
 package animations;
 
+import Config.ImageConfig;
 import utils.SoundAndMusic;
 
 import javax.swing.*;
@@ -37,7 +38,7 @@ public class NormalZombie extends Zombie{
     }
     public void move_show(Graphics g)
     {
-        g.drawImage((new ImageIcon("Image/zombie/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.zombieFrame +page+".png")).getImage(), x, y, null);
     }
     public void move_anime() {
         if(page==17)page=0;
@@ -69,7 +70,7 @@ public class NormalZombie extends Zombie{
         }
     }
     public void eat_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/zombieeat/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.zombieEatFrame+page+".png")).getImage(), x, y, null);
 
 
     }
@@ -106,7 +107,7 @@ public class NormalZombie extends Zombie{
     }
     public void imove_show(Graphics g)
     {
-        g.drawImage((new ImageIcon("Image/zombieFrozen.png")).getImage(), x, y+60, null);
+        g.drawImage((new ImageIcon(ImageConfig.zombieFrozen)).getImage(), x, y+60, null);
     }
     public void imove_anime() {
         if(page==17)page=0;
@@ -143,7 +144,7 @@ public class NormalZombie extends Zombie{
         }
     }
     public void ieat_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/zombieeat/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.zombieEatFrame+page+".png")).getImage(), x, y, null);
 
 
     }
@@ -180,8 +181,8 @@ public class NormalZombie extends Zombie{
     }
     public void die_show(Graphics g) {
 
-        g.drawImage((new ImageIcon("Image/zombiedie/Frame"+page+".png")).getImage(), x, y, null);
-        g.drawImage((new ImageIcon("Image/zombiehead/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.zombieDieFrame+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon(ImageConfig.zombieHeadFrame+page+".png")).getImage(), x, y, null);
 
     }
     public void die_anime() {

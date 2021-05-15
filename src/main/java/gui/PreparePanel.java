@@ -5,6 +5,7 @@
  */
 package gui;
 
+import Config.ImageConfig;
 import utils.SoundAndMusic;
 
 /**
@@ -73,7 +74,7 @@ public class PreparePanel extends javax.swing.JFrame {
         });
         getContentPane().add(HardButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 550, 200, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/start3.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(ImageConfig.preparePanel))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 634));
 
         pack();

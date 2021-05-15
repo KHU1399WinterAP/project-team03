@@ -1,5 +1,6 @@
 package animations;
 
+import Config.ImageConfig;
 import utils.SoundAndMusic;
 
 import javax.swing.*;
@@ -31,7 +32,7 @@ public class IceBullet {
     }
 
     private void flyimage(Graphics g) {
-        Image tu = (new ImageIcon("Image/bullet/icebullet.png")).getImage();
+        Image tu = (new ImageIcon(ImageConfig.iceBullet)).getImage();
         g.drawImage(tu, x+58, y+80, null);
     }
 

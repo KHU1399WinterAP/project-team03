@@ -1,4 +1,6 @@
-package StartTheGame;
+package animations;
+
+import utils.SoundAndMusic;
 
 import java.awt.*;
 

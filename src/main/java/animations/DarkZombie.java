@@ -1,16 +1,18 @@
-package StartTheGame;
+package animations;
+
+import utils.SoundAndMusic;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class NormalZombie extends Zombie{
+public class DarkZombie extends Zombie {
     int x,y,health,page;
     int state;//1.move2.eat.3.die4.clear
     SoundAndMusic a=new SoundAndMusic("music/eat.wav");
-    public NormalZombie(int x,int y) {
+    public DarkZombie(int x,int y) {
         this.y=y;this.x=x;
         move();
-        health=100;
+        health=200;
     }
     public SoundAndMusic a() {
         return a;
@@ -29,13 +31,14 @@ public class NormalZombie extends Zombie{
         }
         return false;
     }
+
     public void move() {
         state=1;
-
     }
     public void move_show(Graphics g)
     {
-        g.drawImage((new ImageIcon("Image/zombie/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon("Image/darkzombie/Frame"+page+".png")).getImage(), x, y, null);
+
     }
     public void move_anime() {
         if(page==17)page=0;
@@ -44,31 +47,28 @@ public class NormalZombie extends Zombie{
         }
     }
     public void move_action(Plants[][] plants) {
-
         x-=1;
         if(meetwithplant(plants)) {
             eat();
         }
         if (health<=0) {
             die();
+
         }
     }
 
     public void eat() {
         state=2;
         page=0;
-
-
     }
     public void eat_anime() {
-        if(page==17) {page=0;a.playSound("music/eat.wav");}
+        if(page==17){page=0;a.playSound("music/eat.wav");}
         else {
             page++;
         }
     }
     public void eat_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/zombieeat/Frame"+page+".png")).getImage(), x, y, null);
-
+        g.drawImage((new ImageIcon("Image/darkzombieeat/Frame"+page+".png")).getImage(), x, y, null);
 
     }
     public void eat_action(Plants[][] plants) {
@@ -89,11 +89,33 @@ public class NormalZombie extends Zombie{
         if(health<=0) {
             die();
 
-
         }
 
     }
 
+    public void die() {
+        state=3;
+        page=0;
+
+    }
+    public void die_show(Graphics g) {
+
+        g.drawImage((new ImageIcon("Image/darkzombiedie/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon("Image/darkzombiehead/Frame"+page+".png")).getImage(), x, y, null);
+
+    }
+    public void die_anime() {
+        if(page==11) {
+            clear();
+        }
+        else {
+            page++;
+        }
+    }
+
+    public void clear() {
+        state=4;
+    }
 
 
     //===========================ice===============================
@@ -104,14 +126,16 @@ public class NormalZombie extends Zombie{
     }
     public void imove_show(Graphics g)
     {
-        g.drawImage((new ImageIcon("Image/zombieFrozen.png")).getImage(), x, y+60, null);
+        g.drawImage((new ImageIcon("Image/darkzombie/Frame"+page+".png")).getImage(), x, y, null);
     }
     public void imove_anime() {
-        if(page==17)page=0;
-        else {
+        if(page==17){page=0;}
+        else{
+            page++;
             if (ice==0) {
-                page++;ice++;ice%=2;}
-            else { ice++;ice%=2;}
+                ice++;ice%=2;}
+            else {
+                ice++;ice%=2;}
         }
     }
     public void imove_action(Plants[][] plants) {
@@ -141,7 +165,7 @@ public class NormalZombie extends Zombie{
         }
     }
     public void ieat_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/zombieeat/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon("Image/darkzombieeat/Frame"+page+".png")).getImage(), x, y, null);
 
 
     }
@@ -152,7 +176,7 @@ public class NormalZombie extends Zombie{
             {
                 if(plants[h][l]!=null&&new Rectangle(x+34, y+81, 80, 100).intersects(plants[h][l].x-10, plants[h][l].y+81, 70,70))
                 {if(iiiice==0) {
-                    plants[h][l].health-=2;iiiice++;iiiice%=2;
+                    plants[h][l].health--;iiiice++;iiiice%=2;
                 }else {
                     iiiice++;iiiice%=2;
                 }
@@ -169,33 +193,6 @@ public class NormalZombie extends Zombie{
 
         }
     }
-
-    public void die() {
-        state=3;
-        page=0;
-
-
-    }
-    public void die_show(Graphics g) {
-
-        g.drawImage((new ImageIcon("Image/zombiedie/Frame"+page+".png")).getImage(), x, y, null);
-        g.drawImage((new ImageIcon("Image/zombiehead/Frame"+page+".png")).getImage(), x, y, null);
-
-    }
-    public void die_anime() {
-        if(page==11) {
-            clear();
-        }
-        else {
-            page++;
-        }
-    }
-
-
-    public void clear() {
-        state=4;
-    }
-
 
     public void show(Graphics g) {
         if(state==1) move_show(g);
@@ -243,5 +240,4 @@ public class NormalZombie extends Zombie{
         if(state==1) state=10;
         if(state==2) state=20;
     }
-
 }

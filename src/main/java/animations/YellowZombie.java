@@ -1,16 +1,19 @@
-package StartTheGame;
+package animations;
+
+import utils.SoundAndMusic;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class DarkZombie extends Zombie {
+public class YellowZombie extends Zombie {
+    SoundAndMusic a=new SoundAndMusic("music/eat.wav");
     int x,y,health,page;
     int state;//1.move2.eat.3.die4.clear
-    SoundAndMusic a=new SoundAndMusic("music/eat.wav");
-    public DarkZombie(int x,int y) {
-        this.y=y;this.x=x;
+    public YellowZombie(int x,int y) {
+        this.y=y;
+        this.x=x;
         move();
-        health=200;
+        health=50;
     }
     public SoundAndMusic a() {
         return a;
@@ -35,8 +38,7 @@ public class DarkZombie extends Zombie {
     }
     public void move_show(Graphics g)
     {
-        g.drawImage((new ImageIcon("Image/darkzombie/Frame"+page+".png")).getImage(), x, y, null);
-
+        g.drawImage((new ImageIcon("Image/yellowzombie/Frame"+page+".png")).getImage(), x, y, null);
     }
     public void move_anime() {
         if(page==17)page=0;
@@ -45,7 +47,7 @@ public class DarkZombie extends Zombie {
         }
     }
     public void move_action(Plants[][] plants) {
-        x-=1;
+        x-=2;
         if(meetwithplant(plants)) {
             eat();
         }
@@ -54,6 +56,7 @@ public class DarkZombie extends Zombie {
 
         }
     }
+
 
     public void eat() {
         state=2;
@@ -66,7 +69,7 @@ public class DarkZombie extends Zombie {
         }
     }
     public void eat_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/darkzombieeat/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon("Image/yellowzombieeat/Frame"+page+".png")).getImage(), x, y, null);
 
     }
     public void eat_action(Plants[][] plants) {
@@ -76,13 +79,13 @@ public class DarkZombie extends Zombie {
             {
                 if(plants[h][l]!=null&&new Rectangle(x+34, y+81, 80, 100).intersects(plants[h][l].x-10, plants[h][l].y+81, 70,70))
                 {
-                    plants[h][l].health-=2;
+                    plants[h][l].health-=5;
                 }
             }
         }
         if(! meetwithplant(plants)) {
-
             move();
+
         }
         if(health<=0) {
             die();
@@ -98,8 +101,8 @@ public class DarkZombie extends Zombie {
     }
     public void die_show(Graphics g) {
 
-        g.drawImage((new ImageIcon("Image/darkzombiedie/Frame"+page+".png")).getImage(), x, y, null);
-        g.drawImage((new ImageIcon("Image/darkzombiehead/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon("Image/yellowzombiedie/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon("Image/yellowzombiehead/Frame"+page+".png")).getImage(), x, y, null);
 
     }
     public void die_anime() {
@@ -111,11 +114,10 @@ public class DarkZombie extends Zombie {
         }
     }
 
+
     public void clear() {
         state=4;
     }
-
-
     //===========================ice===============================
     int ice=0,iice=0,iiice=0,iiiice=0;
     public void imove() {
@@ -124,21 +126,19 @@ public class DarkZombie extends Zombie {
     }
     public void imove_show(Graphics g)
     {
-        g.drawImage((new ImageIcon("Image/darkzombie/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon("Image/yellowzombie/Frame"+page+".png")).getImage(), x, y, null);
     }
     public void imove_anime() {
-        if(page==17){page=0;}
-        else{
-            page++;
+        if(page==17)page=0;
+        else {
             if (ice==0) {
-                ice++;ice%=2;}
-            else {
-                ice++;ice%=2;}
+                page++;ice++;ice%=2;}
+            else { ice++;ice%=2;}
         }
     }
     public void imove_action(Plants[][] plants) {
         if(iice==0) {
-            x-=1;iice++;iice%=2;}else {x-=0.5;iice++;iice%=2;}
+            x-=2;iice++;iice%=2;}else {x-=1;iice++;iice%=2;}
         if(meetwithplant(plants)) {
             ieat();
         }
@@ -163,7 +163,7 @@ public class DarkZombie extends Zombie {
         }
     }
     public void ieat_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/darkzombieeat/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon("Image/yellowzombieeat/Frame"+page+".png")).getImage(), x, y, null);
 
 
     }
@@ -174,7 +174,7 @@ public class DarkZombie extends Zombie {
             {
                 if(plants[h][l]!=null&&new Rectangle(x+34, y+81, 80, 100).intersects(plants[h][l].x-10, plants[h][l].y+81, 70,70))
                 {if(iiiice==0) {
-                    plants[h][l].health--;iiiice++;iiiice%=2;
+                    plants[h][l].health-=5;iiiice++;iiiice%=2;
                 }else {
                     iiiice++;iiiice%=2;
                 }
@@ -221,7 +221,6 @@ public class DarkZombie extends Zombie {
         }
     }
 
-
     public int getx() {
         return x;
     }
@@ -238,4 +237,5 @@ public class DarkZombie extends Zombie {
         if(state==1) state=10;
         if(state==2) state=20;
     }
+
 }

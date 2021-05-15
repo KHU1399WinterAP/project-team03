@@ -1,8 +1,13 @@
-package StartTheGame;
+package gui;
+
+import animations.*;
+import utils.Background;
+import utils.SoundAndMusic;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
+import animations.Card;
 
 public class GameField {
     PlantsVsZombies plantsVsZombies;

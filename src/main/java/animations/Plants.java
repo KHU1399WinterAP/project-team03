@@ -1,17 +1,17 @@
-package StartTheGame;
+package animations;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
 public class Plants {
-    int x;
-    int y;
-    int page;
-    int health;
-    int timer;
-    int type;
-    int state;
+    public int x;
+    public int y;
+    public int page;
+    public int health;
+    public int timer;
+    public int type;
+    public int state;
 
     public Plants() {
     }

@@ -1,3 +1,5 @@
+package Config;
+
 import Config.DatabaseConfig;
 import Config.User;
 

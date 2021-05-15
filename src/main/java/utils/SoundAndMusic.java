@@ -1,4 +1,4 @@
-package StartTheGame;
+package utils;
 
 import javax.sound.sampled.*;
 import java.io.File;

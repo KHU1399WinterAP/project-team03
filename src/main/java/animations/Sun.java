@@ -1,4 +1,6 @@
-package StartTheGame;
+package animations;
+
+import utils.SoundAndMusic;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +11,7 @@ public class Sun {
     int y;
     int endY;
     int timer = 0;
-    int state;//1)show2)remove
+    public int state;//1)show2)remove
 
 
 
@@ -48,7 +50,7 @@ public class Sun {
 
     }
 
-    boolean ifclicked(int x, int y){
+    public boolean ifclicked(int x, int y){
         if(new Rectangle(34+this.x,81+ this.y, 78, 78).contains(x, y))
         {
             SoundAndMusic a=new SoundAndMusic("music/sun.wav");

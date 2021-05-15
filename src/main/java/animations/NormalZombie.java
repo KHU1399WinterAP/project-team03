@@ -1,17 +1,18 @@
-package StartTheGame;
+package animations;
+
+import utils.SoundAndMusic;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class YellowZombie extends Zombie {
-    SoundAndMusic a=new SoundAndMusic("music/eat.wav");
+public class NormalZombie extends Zombie{
     int x,y,health,page;
     int state;//1.move2.eat.3.die4.clear
-    public YellowZombie(int x,int y) {
-        this.y=y;
-        this.x=x;
+    SoundAndMusic a=new SoundAndMusic("music/eat.wav");
+    public NormalZombie(int x,int y) {
+        this.y=y;this.x=x;
         move();
-        health=50;
+        health=100;
     }
     public SoundAndMusic a() {
         return a;
@@ -30,13 +31,13 @@ public class YellowZombie extends Zombie {
         }
         return false;
     }
-
     public void move() {
         state=1;
+
     }
     public void move_show(Graphics g)
     {
-        g.drawImage((new ImageIcon("Image/yellowzombie/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon("Image/zombie/Frame"+page+".png")).getImage(), x, y, null);
     }
     public void move_anime() {
         if(page==17)page=0;
@@ -45,29 +46,31 @@ public class YellowZombie extends Zombie {
         }
     }
     public void move_action(Plants[][] plants) {
-        x-=2;
+
+        x-=1;
         if(meetwithplant(plants)) {
             eat();
         }
         if (health<=0) {
             die();
-
         }
     }
-
 
     public void eat() {
         state=2;
         page=0;
+
+
     }
     public void eat_anime() {
-        if(page==17){page=0;a.playSound("music/eat.wav");}
+        if(page==17) {page=0;a.playSound("music/eat.wav");}
         else {
             page++;
         }
     }
     public void eat_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/yellowzombieeat/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon("Image/zombieeat/Frame"+page+".png")).getImage(), x, y, null);
+
 
     }
     public void eat_action(Plants[][] plants) {
@@ -77,45 +80,24 @@ public class YellowZombie extends Zombie {
             {
                 if(plants[h][l]!=null&&new Rectangle(x+34, y+81, 80, 100).intersects(plants[h][l].x-10, plants[h][l].y+81, 70,70))
                 {
-                    plants[h][l].health-=5;
+                    plants[h][l].health-=2;
                 }
             }
         }
         if(! meetwithplant(plants)) {
-            move();
 
+            move();
         }
         if(health<=0) {
             die();
 
+
         }
 
     }
 
-    public void die() {
-        state=3;
-        page=0;
-
-    }
-    public void die_show(Graphics g) {
-
-        g.drawImage((new ImageIcon("Image/yellowzombiedie/Frame"+page+".png")).getImage(), x, y, null);
-        g.drawImage((new ImageIcon("Image/yellowzombiehead/Frame"+page+".png")).getImage(), x, y, null);
-
-    }
-    public void die_anime() {
-        if(page==11) {
-            clear();
-        }
-        else {
-            page++;
-        }
-    }
 
 
-    public void clear() {
-        state=4;
-    }
     //===========================ice===============================
     int ice=0,iice=0,iiice=0,iiiice=0;
     public void imove() {
@@ -124,7 +106,7 @@ public class YellowZombie extends Zombie {
     }
     public void imove_show(Graphics g)
     {
-        g.drawImage((new ImageIcon("Image/yellowzombie/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon("Image/zombieFrozen.png")).getImage(), x, y+60, null);
     }
     public void imove_anime() {
         if(page==17)page=0;
@@ -136,7 +118,7 @@ public class YellowZombie extends Zombie {
     }
     public void imove_action(Plants[][] plants) {
         if(iice==0) {
-            x-=2;iice++;iice%=2;}else {x-=1;iice++;iice%=2;}
+            x-=1;iice++;iice%=2;}else {x-=0.5;iice++;iice%=2;}
         if(meetwithplant(plants)) {
             ieat();
         }
@@ -161,7 +143,7 @@ public class YellowZombie extends Zombie {
         }
     }
     public void ieat_show(Graphics g) {
-        g.drawImage((new ImageIcon("Image/yellowzombieeat/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon("Image/zombieeat/Frame"+page+".png")).getImage(), x, y, null);
 
 
     }
@@ -172,7 +154,7 @@ public class YellowZombie extends Zombie {
             {
                 if(plants[h][l]!=null&&new Rectangle(x+34, y+81, 80, 100).intersects(plants[h][l].x-10, plants[h][l].y+81, 70,70))
                 {if(iiiice==0) {
-                    plants[h][l].health-=5;iiiice++;iiiice%=2;
+                    plants[h][l].health-=2;iiiice++;iiiice%=2;
                 }else {
                     iiiice++;iiiice%=2;
                 }
@@ -189,6 +171,33 @@ public class YellowZombie extends Zombie {
 
         }
     }
+
+    public void die() {
+        state=3;
+        page=0;
+
+
+    }
+    public void die_show(Graphics g) {
+
+        g.drawImage((new ImageIcon("Image/zombiedie/Frame"+page+".png")).getImage(), x, y, null);
+        g.drawImage((new ImageIcon("Image/zombiehead/Frame"+page+".png")).getImage(), x, y, null);
+
+    }
+    public void die_anime() {
+        if(page==11) {
+            clear();
+        }
+        else {
+            page++;
+        }
+    }
+
+
+    public void clear() {
+        state=4;
+    }
+
 
     public void show(Graphics g) {
         if(state==1) move_show(g);
@@ -218,6 +227,7 @@ public class YellowZombie extends Zombie {
             ieat_action(a);
         }
     }
+
 
     public int getx() {
         return x;

@@ -1,12 +1,12 @@
-package StartTheGame;
+package animations;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class Card {
-    int canbuyornot;
-    int cardnumber;
-    String cardname;
+    public int canbuyornot;
+    public int cardnumber;
+    public String cardname;
     public Card(int number,String name) {
         this.cardname=name;
         this.cardnumber=number;

@@ -13,7 +13,7 @@ public class SoundAndMusic {
     public SoundAndMusic(String file_path) {
         this.file_path = file_path;
         state = 1;
-        sound_path=file_path;
+        sound_path = file_path;
     }
 
     public void StartPlay_BGM() {
@@ -39,7 +39,7 @@ public class SoundAndMusic {
                         line.start();
                         int nbytes = 0;
                         while (nbytes != -1) {
-                            if (state == 3){
+                            if (state == 3) {
                                 break;
                             }
                             nbytes = stream.read(buf, 0, buf.length);
@@ -56,7 +56,7 @@ public class SoundAndMusic {
                         e.printStackTrace();
                     }
 
-                    if (state == 3){
+                    if (state == 3) {
                         break;
                     }
                 }
@@ -64,19 +64,18 @@ public class SoundAndMusic {
         });
         a.start();
     }
+
     public void StopPlay_BGM() {
-        state=3;
+        state = 3;
         a.stop();
     }
-    public void playSound(String sound_path) {
-        this.sound_path=sound_path;
 
-        new Thread(new Runnable()
-        {
-            public void run()
-            {
-                try
-                {
+    public void playSound(String sound_path) {
+        this.sound_path = sound_path;
+
+        new Thread(new Runnable() {
+            public void run() {
+                try {
                     File file = new File(sound_path);
                     AudioInputStream stream = AudioSystem
                             .getAudioInputStream(file);
@@ -89,26 +88,19 @@ public class SoundAndMusic {
                     line.open();
                     line.start();
                     int nbytes = 0;
-                    while (nbytes != -1)
-                    {
-                        if(  state==3  )   break;
+                    while (nbytes != -1) {
+                        if (state == 3) break;
                         nbytes = stream.read(buf, 0, buf.length);
                         if (nbytes >= 0)
                             line.write(buf, 0, nbytes);
                     }
                     line.drain();
                     line.close();
-                }
-                catch (UnsupportedAudioFileException e)
-                {
+                } catch (UnsupportedAudioFileException e) {
                     e.printStackTrace();
-                }
-                catch (IOException e)
-                {
+                } catch (IOException e) {
                     e.printStackTrace();
-                }
-                catch (LineUnavailableException e)
-                {
+                } catch (LineUnavailableException e) {
                     e.printStackTrace();
                 }
             }

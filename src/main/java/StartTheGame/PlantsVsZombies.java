@@ -6,9 +6,6 @@ import java.awt.event.*;
 
 public class PlantsVsZombies {
     int runstate=0;
-    public static void main(String[] args) {
-        new PlantsVsZombies();
-    }
 
     GameField pvz_game;
     PreparePanel pvz_pre;
@@ -18,13 +15,10 @@ public class PlantsVsZombies {
 
 
     void newGame() {
-        pvz_pre=new PreparePanel(this);
+        pvz_pre=new PreparePanel();
     }
     public void mouseclick(MouseEvent e) {
         if(pvz_game!=null) pvz_game.mouseclick(mx, my);
-        if(pvz_pre!=null) pvz_pre.mouseclick(mx, my);
-        if(pvz_die!=null) pvz_die.mouseclick(mx, my);
-        if(pvz_win!=null) pvz_win.mouseclick(mx, my);
     }
 
     void mouserelease(MouseEvent e) {}
@@ -43,16 +37,16 @@ public class PlantsVsZombies {
         {
             pvz_game.gamepanel(g);
         }
-        if(pvz_pre!=null)
-        {
-            pvz_pre.PreparePanel(g);
-        }
-        if(pvz_die!=null) {
-            pvz_die.diefield(g);
-        }
-        if(pvz_win!=null) {
-            pvz_win.winfield(g);
-        }
+//        if(pvz_pre!=null)
+//        {
+//            pvz_pre.PreparePanel(g);
+//        }
+//        if(pvz_die!=null) {
+//            pvz_die.diefield(g);
+//        }
+//        if(pvz_win!=null) {
+//            pvz_win.winfield(g);
+//        }
     }
     void timer() throws Exception {
         if(pvz_game!=null)
@@ -69,10 +63,10 @@ public class PlantsVsZombies {
     int mx,my;//Êó±êºá×Ý×ø±ê
     public PlantsVsZombies(){
         newGame();
-
         panel=new mainPanel();
         panel.setSize(860, 678+35);
         panel.setVisible(true);
+        panel.setLocationRelativeTo(null);
         timer=new mainTimer(59);
 
     }

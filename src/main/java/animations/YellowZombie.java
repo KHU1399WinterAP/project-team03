@@ -1,13 +1,14 @@
 package animations;
 
 import Config.ImageConfig;
+import Config.MusicConfig;
 import utils.SoundAndMusic;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class YellowZombie extends Zombie {
-    SoundAndMusic a=new SoundAndMusic("music/eat.wav");
+    SoundAndMusic a=new SoundAndMusic(MusicConfig.eat);
     int x,y,health,page;
     int state;//1.move2.eat.3.die4.clear
     public YellowZombie(int x,int y) {
@@ -64,7 +65,7 @@ public class YellowZombie extends Zombie {
         page=0;
     }
     public void eat_anime() {
-        if(page==17){page=0;a.playSound("music/eat.wav");}
+        if(page==17){page=0;a.playSound(MusicConfig.eat);}
         else {
             page++;
         }
@@ -155,7 +156,7 @@ public class YellowZombie extends Zombie {
 
     }
     public void ieat_anime() {
-        if(page==17) {page=0;a.playSound("music/eat.wav");}
+        if(page==17) {page=0;a.playSound(MusicConfig.eat);}
         else {
             if(iiice==0) {
 

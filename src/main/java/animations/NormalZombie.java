@@ -1,6 +1,7 @@
 package animations;
 
 import Config.ImageConfig;
+import Config.MusicConfig;
 import utils.SoundAndMusic;
 
 import javax.swing.*;
@@ -9,7 +10,7 @@ import java.awt.*;
 public class NormalZombie extends Zombie{
     int x,y,health,page;
     int state;//1.move2.eat.3.die4.clear
-    SoundAndMusic a=new SoundAndMusic("music/eat.wav");
+    SoundAndMusic a=new SoundAndMusic(MusicConfig.eat);
     public NormalZombie(int x,int y) {
         this.y=y;this.x=x;
         move();
@@ -64,7 +65,7 @@ public class NormalZombie extends Zombie{
 
     }
     public void eat_anime() {
-        if(page==17) {page=0;a.playSound("music/eat.wav");}
+        if(page==17) {page=0;a.playSound(MusicConfig.eat);}
         else {
             page++;
         }
@@ -135,7 +136,7 @@ public class NormalZombie extends Zombie{
 
     }
     public void ieat_anime() {
-        if(page==17) {page=0;a.playSound("music/eat.wav");}
+        if(page==17) {page=0;a.playSound(MusicConfig.eat);}
         else {
             if(iiice==0) {
 

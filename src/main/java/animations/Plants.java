@@ -89,7 +89,7 @@ public class Plants {
         {
             Image tu = (new ImageIcon(ImageConfig.peashooterFrame2)).getImage();
             g.drawImage(tu,x, y, null);
-            Image tu1 = (new ImageIcon("Image/plantput/pea.png")).getImage();
+            Image tu1 = (new ImageIcon(ImageConfig.plantPutPea)).getImage();
             g.drawImage(tu1,34+((x-34)/80)*80, 81+((y-81)/100)*100, null);
         }
     }
@@ -120,7 +120,7 @@ public class Plants {
         {
             Image tu = (new ImageIcon(ImageConfig.icePeashooterFrame2)).getImage();
             g.drawImage(tu,x, y, null);
-            Image tu1 = (new ImageIcon("Image/plantput/ice.png")).getImage();
+            Image tu1 = (new ImageIcon(ImageConfig.plantPutIce)).getImage();
             g.drawImage(tu1,34+((x-34)/80)*80, 81+((y-81)/100)*100, null);
         }
     }

@@ -1,6 +1,7 @@
 package animations;
 
 import Config.ImageConfig;
+import Config.MusicConfig;
 import utils.SoundAndMusic;
 
 import javax.swing.*;
@@ -23,8 +24,8 @@ public class Bullet {
     private boolean a(Zombie zombie) {
 
         if(new Rectangle(x, y, 30, 30).intersects(zombie.getx(), zombie.gety(), 80, 100)) {
-            SoundAndMusic a=new SoundAndMusic("music/peng.wav");
-            a.playSound("music/peng.wav");
+            SoundAndMusic a=new SoundAndMusic(MusicConfig.peng);
+            a.playSound(MusicConfig.peng);
             return true;}
         return false;
     }

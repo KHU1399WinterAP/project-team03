@@ -6,6 +6,7 @@
 package gui;
 
 import Config.ImageConfig;
+import Config.MusicConfig;
 import utils.SoundAndMusic;
 
 /**
@@ -93,8 +94,8 @@ public class PreparePanel extends javax.swing.JFrame {
         mood(30,10,"Hard");
     }//GEN-LAST:event_HardButtonMouseClicked
     private void mood(int zombieNumber,int zombieRandomNumber,String mood){
-        SoundAndMusic a = new SoundAndMusic("music/laugh.wav");
-        a.playSound("music/laugh.wav");
+        SoundAndMusic a = new SoundAndMusic(MusicConfig.laugh);
+        a.playSound(MusicConfig.laugh);
         i = new PlantsVsZombies();
 //        BGM.StopPlay_BGM();
         i.pvz_game = new GameField(i);

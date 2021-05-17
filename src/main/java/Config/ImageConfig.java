@@ -76,4 +76,8 @@ public class ImageConfig {
     public static String background = "Image/Background/background.png";
 
     public static String backgroundShopping = "Image/Background/shopping.png";
+
+    public static String plantPutPea = "Image/plantput/pea.png";
+
+    public static String plantPutIce = "Image/plantput/ice.png";
 }

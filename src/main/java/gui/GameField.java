@@ -1,5 +1,6 @@
 package gui;
 
+import Config.MusicConfig;
 import animations.*;
 import utils.Background;
 import utils.SoundAndMusic;
@@ -66,7 +67,7 @@ public class GameField {
         plants = new Plants[6][9];
 
         sunlight_value = 50;
-        BGM = new SoundAndMusic("music/BGM.wav");
+        BGM = new SoundAndMusic(MusicConfig.bgm);
         BGM.StartPlay_BGM();
     }
 
@@ -322,8 +323,8 @@ public class GameField {
                 BGM.StopPlay_BGM();
                 Thread.sleep(200);
 
-                SoundAndMusic a = new SoundAndMusic("music/laugh.wav");
-                a.playSound("music/laugh.wav");
+                SoundAndMusic a = new SoundAndMusic(MusicConfig.laugh);
+                a.playSound(MusicConfig.laugh);
 
                 plantsVsZombies.pvz_game = null;
                 plantsVsZombies.pvz_die = new DieField();
@@ -335,8 +336,8 @@ public class GameField {
         if (zombie_die_number == Zombie_Number) {
             BGM.StopPlay_BGM();
 
-            SoundAndMusic a = new SoundAndMusic("music/winner.wav");
-            a.playSound("music/winner.wav");
+            SoundAndMusic a = new SoundAndMusic(MusicConfig.win);
+            a.playSound(MusicConfig.win);
             Thread.sleep(1000);
 
             plantsVsZombies.pvz_game = null;

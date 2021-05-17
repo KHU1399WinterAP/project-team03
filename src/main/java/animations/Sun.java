@@ -1,6 +1,7 @@
 package animations;
 
 import Config.ImageConfig;
+import Config.MusicConfig;
 import utils.SoundAndMusic;
 
 import javax.swing.*;
@@ -54,8 +55,8 @@ public class Sun {
     public boolean ifclicked(int x, int y){
         if(new Rectangle(34+this.x,81+ this.y, 78, 78).contains(x, y))
         {
-            SoundAndMusic a=new SoundAndMusic("music/sun.wav");
-            a.playSound("music/sun.wav");
+            SoundAndMusic a=new SoundAndMusic(MusicConfig.sun);
+            a.playSound(MusicConfig.sun);
             return true;
         }
         return false;

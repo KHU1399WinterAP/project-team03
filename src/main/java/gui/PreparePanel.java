@@ -93,10 +93,10 @@ public class PreparePanel extends javax.swing.JFrame {
         mood(30,10,"Hard");
     }//GEN-LAST:event_HardButtonMouseClicked
     private void mood(int zombieNumber,int zombieRandomNumber,String mood){
-        i = new PlantsVsZombies();
-//        BGM.StopPlay_BGM();
         SoundAndMusic a = new SoundAndMusic("music/laugh.wav");
         a.playSound("music/laugh.wav");
+        i = new PlantsVsZombies();
+//        BGM.StopPlay_BGM();
         i.pvz_game = new GameField(i);
         i.pvz_game.newGame(zombieNumber, zombieRandomNumber);
         System.out.println(mood);

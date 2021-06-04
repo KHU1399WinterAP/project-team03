@@ -1,7 +1,7 @@
 package animations;
 
-import config.ImageConfig;
-import config.MusicConfig;
+import Config.ImageConfig;
+import Config.MusicConfig;
 import utils.SoundAndMusic;
 
 import javax.swing.*;
@@ -16,40 +16,46 @@ public class Sun {
     public int state;//1)show2)remove
 
 
-    public Sun(int x, int y) {
-        state = 1;
-        this.y = y;
-        this.x = x;
+
+    public Sun(int x,int y) {
+        state=1;
+        this.y=y;
+        this.x=x;
     }
 
     public Sun() {
-        state = 1;
-        y = -80;
-        x = 80 * new Random().nextInt(9);
-        endY = 100 * new Random().nextInt(5);
+        state=1;
+        y=-80;
+        x=80*new Random().nextInt(9);
+        endY=100*new Random().nextInt(5);
     }
 
 
     public void paintComponent(Graphics g) {
 
-        g.drawImage((new ImageIcon(ImageConfig.sunImage)).getImage(), 34 + x, 81 + y, null);
+        g.drawImage((new ImageIcon(ImageConfig.sun)).getImage(),34+x,81+y,null);
     }
 
     public void drop() {
-        if (y < endY) {
-            y += 3;
-        } else {
+        if(y<endY)
+        {
+            y+=3;
+        }
+        else
+        {
             timer++;
-            if (timer > 70) {
-                state = 2;
+            if(timer>70)
+            {
+                state=2;
             }
         }
 
     }
 
-    public boolean ifclicked(int x, int y) {
-        if (new Rectangle(34 + this.x, 81 + this.y, 78, 78).contains(x, y)) {
-            SoundAndMusic a = new SoundAndMusic(MusicConfig.sun);
+    public boolean ifclicked(int x, int y){
+        if(new Rectangle(34+this.x,81+ this.y, 78, 78).contains(x, y))
+        {
+            SoundAndMusic a=new SoundAndMusic(MusicConfig.sun);
             a.playSound(MusicConfig.sun);
             return true;
         }

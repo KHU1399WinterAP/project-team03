@@ -5,15 +5,26 @@
  */
 package gui;
 
+<<<<<<< HEAD
 import config.ImageConfig;
 
 /**
+=======
+import Config.ImageConfig;
+
+/**
+ *
+>>>>>>> master
  * @author danae
  */
 public class WinField extends javax.swing.JFrame {
 
     /**
+<<<<<<< HEAD
      * Creates new form WinField
+=======
+     * Creates new form WinField1
+>>>>>>> master
      */
     public WinField() {
         initComponents();
@@ -28,11 +39,15 @@ public class WinField extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
         jPanel1 = new javax.swing.JPanel();
+=======
+>>>>>>> master
         backButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+<<<<<<< HEAD
         setTitle("WinField");
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -40,11 +55,19 @@ public class WinField extends javax.swing.JFrame {
         backButton.setFont(new java.awt.Font("Roboto Slab Black", 1, 36)); // NOI18N
         backButton.setForeground(new java.awt.Color(153, 0, 0));
         backButton.setText("Back to Main Menu");
+=======
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        backButton.setFont(new java.awt.Font("Oswald SemiBold", 2, 36)); // NOI18N
+        backButton.setForeground(new java.awt.Color(0, 51, 153));
+        backButton.setText("Back to MainMenu");
+>>>>>>> master
         backButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backButtonMouseClicked(evt);
             }
         });
+<<<<<<< HEAD
         jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, 480, 90));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(ImageConfig.winImage))); // NOI18N
@@ -60,6 +83,12 @@ public class WinField extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+=======
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, 390, 80));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(ImageConfig.winField))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 591));
+>>>>>>> master
 
         pack();
         setLocationRelativeTo(null);
@@ -88,6 +117,7 @@ public class WinField extends javax.swing.JFrame {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
+<<<<<<< HEAD
 //            java.util.logging.Logger.getLogger(WinField.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
 //            java.util.logging.Logger.getLogger(WinField.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -95,13 +125,26 @@ public class WinField extends javax.swing.JFrame {
 //            java.util.logging.Logger.getLogger(WinField.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
 //            java.util.logging.Logger.getLogger(WinField.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+=======
+//            java.util.logging.Logger.getLogger(WinField1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(WinField1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(WinField1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(WinField1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+>>>>>>> master
 //        }
 //        //</editor-fold>
 //
 //        /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
+<<<<<<< HEAD
 //                new WinField().setVisible(true);
+=======
+//                new WinField1().setVisible(true);
+>>>>>>> master
 //            }
 //        });
 //    }
@@ -109,6 +152,9 @@ public class WinField extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
+<<<<<<< HEAD
     private javax.swing.JPanel jPanel1;
+=======
+>>>>>>> master
     // End of variables declaration//GEN-END:variables
 }

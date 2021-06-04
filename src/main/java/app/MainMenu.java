@@ -6,8 +6,12 @@ package app;
  * and open the template in the editor.
  */
 
+<<<<<<< HEAD:src/main/java/app/MainMenu.java
 import config.ImageConfig;
 import gui.Login1;
+=======
+import gui.Login;
+>>>>>>> master:src/main/java/MainMenu.java
 import gui.Register;
 
 /**
@@ -43,22 +47,36 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+<<<<<<< HEAD:src/main/java/app/MainMenu.java
         loginButton.setBackground(new java.awt.Color(51, 51, 0));
         loginButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         loginButton.setForeground(new java.awt.Color(255, 255, 255));
         loginButton.setText("Login");
         loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+=======
+        jButton1.setBackground(new java.awt.Color(51, 51, 0));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setText("Login");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+>>>>>>> master:src/main/java/MainMenu.java
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 loginButtonMouseClicked(evt);
             }
         });
         jPanel1.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 170, 50));
 
+<<<<<<< HEAD:src/main/java/app/MainMenu.java
         registerButton.setBackground(new java.awt.Color(51, 51, 0));
         registerButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         registerButton.setForeground(new java.awt.Color(255, 255, 255));
         registerButton.setText("Register");
         registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
+=======
+        jButton2.setBackground(new java.awt.Color(51, 51, 0));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setText("Register");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+>>>>>>> master:src/main/java/MainMenu.java
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 registerButtonMouseClicked(evt);
             }
@@ -80,6 +98,7 @@ public class MainMenu extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked

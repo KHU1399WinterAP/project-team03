@@ -1,7 +1,7 @@
 package animations;
 
-import Config.ImageConfig;
-import Config.MusicConfig;
+import config.ImageConfig;
+import config.MusicConfig;
 import utils.SoundAndMusic;
 
 import javax.swing.*;

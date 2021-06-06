@@ -1,7 +1,7 @@
-package Config;
+package config;
 
-import Config.DatabaseConfig;
-import Config.User;
+import config.DatabaseConfig;
+import config.User;
 
 import java.sql.*;
 

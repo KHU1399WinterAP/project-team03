@@ -1,10 +1,9 @@
-package Config;
+package config;
 
 public class ImageConfig {
     public static String bullet = "Image/bullet/bullet.png";
 
     public static String card = "Image/card/";
-<<<<<<< HEAD
 
     public static String darkZombieFrame = "Image/darkzombie/Frame";
 
@@ -21,7 +20,6 @@ public class ImageConfig {
     public static String zombieFrozen = "Image/zombieFrozen.png";
 
     public static String zombieDieFrame = "Image/zombiedie/Frame";
-<<<<<<< HEAD
 
     public static String zombieHeadFrame = "Image/zombiehead/Frame";
 
@@ -30,29 +28,9 @@ public class ImageConfig {
     public static String peashooterFrame2 = "Image/peashooter/Frame0.png";
 
     public static String icePeashooterFrame = "Image/icepeashooter/Frame";
-=======
->>>>>>> origin/main
 
-=======
-
-    public static String zombieHeadFrame = "Image/zombiehead/Frame";
-
-<<<<<<< HEAD
-    public static String peashooterFrame = "Image/peashooter/Frame";
-
-    public static String peashooterFrame2 = "Image/peashooter/Frame0.png";
-=======
-    public static String darkZombieDieFrame = "Image/darkzombiedie/Frame";
-
-    public static String iceBullet = "Image/bullet/icebullet.png";
->>>>>>> origin/main
-
-    public static String icePeashooterFrame = "Image/icepeashooter/Frame";
-
->>>>>>> 9f91c1e (fix bug run)
     public static String icePeashooterFrame2 = "Image/icepeashooter/Frame0.png";
 
-<<<<<<< HEAD
     public static String sunflowerFrame = "Image/sunflower/Frame";
 
     public static String sunflowerFrame2  = "Image/sunflower/Frame0.png";
@@ -62,54 +40,15 @@ public class ImageConfig {
     public static String nutFrame = "Image/nut1/Frame";
 
     public static String nut2Frame = "Image/nut2/Frame";
-=======
-    public static String zombieFrozen = "Image/zombieFrozen.png";
-
-    public static String zombieDieFrame = "Image/zombiedie/Frame";
-
-    public static String zombieHeadFrame = "Image/zombiehead/Frame";
-
-    public static String peashooterFrame = "Image/peashooter/Frame";
-
-    public static String peashooterFrame2 = "Image/peashooter/Frame0.png";
-
-    public static String icePeashooterFrame = "Image/icepeashooter/Frame";
-
-    public static String icePeashooterFrame2 = "Image/icepeashooter/Frame0.png";
->>>>>>> origin/main
 
     public static String nut3Frame = "Image/nut3/Frame";
 
-<<<<<<< HEAD
-    public static String nut1Frame2 = "Image/nut1/Frame0.png";
-<<<<<<< HEAD
-
-    public static String plantPutNut = "Image/plantput/nut.png";
-=======
-    public static String sunflowerFrame2  = "Image/sunflower/Frame0.png";
-
-    public static String plantPutSun = "Image/plantput/sun.png";
-
-    public static String nutFrame = "Image/nut1/Frame";
->>>>>>> origin/main
-
-    public static String redZombie = "Image/redzombie/Frame";
-
-=======
-
-<<<<<<< HEAD
-=======
     public static String nut1Frame2 = "Image/nut1/Frame0.png";
 
->>>>>>> origin/main
     public static String plantPutNut = "Image/plantput/nut.png";
 
     public static String redZombie = "Image/redzombie/Frame";
 
-<<<<<<< HEAD
->>>>>>> 9f91c1e (fix bug run)
-=======
->>>>>>> origin/main
     public static String redZombieEat = "Image/redzombieeat/Frame";
 
     public static String redZombieDie = "Image/redzombiedie/Frame";
@@ -135,23 +74,10 @@ public class ImageConfig {
     public static String winField = "/win.jpg";
 
     public static String background = "Image/Background/background.png";
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/main
 
     public static String backgroundShopping = "Image/Background/shopping.png";
 
     public static String plantPutPea = "Image/plantput/pea.png";
-<<<<<<< HEAD
 
     public static String plantPutIce = "Image/plantput/ice.png";
-=======
-
-    public static String backgroundShopping = "Image/Background/shopping.png";
->>>>>>> 9f91c1e (fix bug run)
-=======
-
-    public static String plantPutIce = "Image/plantput/ice.png";
->>>>>>> origin/main
 }

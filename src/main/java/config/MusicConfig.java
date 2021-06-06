@@ -1,4 +1,4 @@
-package Config;
+package config;
 
 public class MusicConfig {
     public static String peng = "music/peng.wav";

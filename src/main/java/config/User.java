@@ -1,4 +1,4 @@
-package Config;
+package config;
 
     public class User {
         public String username;
@@ -17,4 +17,5 @@ package Config;
                     '}';
         }
     }
+
 

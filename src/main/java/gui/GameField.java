@@ -1,13 +1,14 @@
 package gui;
 
 import config.MusicConfig;
+import animations.*;
 import utils.Background;
 import utils.SoundAndMusic;
-import animations.*;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
+import animations.Card;
 
 public class GameField {
     PlantsVsZombies plantsVsZombies;
@@ -16,11 +17,11 @@ public class GameField {
         this.plantsVsZombies = plantsVsZombies;
     }
 
-    ArrayList<Sun> sunList;
-    ArrayList<Zombie> zombieList;
-    ArrayList<Bullet> bulletList;
-    ArrayList<IceBullet> iceBulletList;
-    ArrayList<Card> cardList;
+    ArrayList<Sun> SunList;
+    ArrayList<Zombie> ZombieList;
+    ArrayList<Bullet> BulletList;
+    ArrayList<IceBullet> IceBulletList;
+    ArrayList<Card> CardList;
 
 
     Background background;
@@ -29,31 +30,32 @@ public class GameField {
     Plants sunflower;
     Plants nut;
     Plants ice_peashooter;
-    int sunlightValue = 50;
+    int sunlight_value = 50;
 
 
-    int zombieDieNumber;
-    int zombieNumber;
-    int zombiesNumber;
-    int zombieRandomNumber;
+    int zombie_die_number;
+    int Zombie_Number;
+    int zombies_number;
+    int zombie_random_number;
 
     SoundAndMusic BGM;
 
-    void newGame(int zombieNumber, int zombieRandomNumber) {
-        this.zombiesNumber = zombieNumber;
-        this.zombieRandomNumber = zombieRandomNumber;
-        zombieDieNumber = 0;
-        sunList = new ArrayList<>();
-        zombieList = new ArrayList<>();
-        bulletList = new ArrayList<>();
-        cardList = new ArrayList<>();
-        iceBulletList = new ArrayList<>();
+    void newGame(int zombie_number, int zombie_random_number) {
+        this.zombies_number = zombie_number;
+        this.zombie_random_number = zombie_random_number;
+        Zombie_Number = zombie_number;
+        zombie_die_number = 0;
+        SunList = new ArrayList<Sun>();
+        ZombieList = new ArrayList<Zombie>();
+        BulletList = new ArrayList<Bullet>();
+        CardList = new ArrayList<Card>();
+        IceBulletList = new ArrayList<IceBullet>();
 
 
-        cardList.add(new Card(0, "sunflower"));
-        cardList.add(new Card(1, "peashooter"));
-        cardList.add(new Card(2, "nut"));
-        cardList.add(new Card(3, "iceshooter"));
+        CardList.add(new Card(0, "sunflower"));
+        CardList.add(new Card(1, "peashooter"));
+        CardList.add(new Card(2, "nut"));
+        CardList.add(new Card(3, "iceshooter"));
 
         background = new Background();
 
@@ -64,98 +66,98 @@ public class GameField {
 
         plants = new Plants[6][9];
 
-        sunlightValue = 50;
-        BGM = new SoundAndMusic(MusicConfig.BGM);
+        sunlight_value = 50;
+        BGM = new SoundAndMusic(MusicConfig.bgm);
         BGM.StartPlay_BGM();
     }
 
     void mouseclick(int x, int y) {
         //==========================nut====================
-        for (int a = 0; a < cardList.size(); a++) {
-            if (cardList.get(a).cardName.equals("nut") && cardList.get(a).canBuyOrNot == 1) {
+        for (int a = 0; a < CardList.size(); a++) {
+            if (CardList.get(a).cardname.equals("nut") && CardList.get(a).canbuyornot == 1) {
                 int ah = (y - 81) / 100;
                 int al = (x - 34) / 80;
 
                 Plants newnut = new Plants(2, al * 80, ah * 100);
                 if (plants[ah][al] == null) {
                     plants[ah][al] = newnut;
-                    sunlightValue -= 50;
-                    cardList.get(a).canBuyOrNot = 0;
+                    sunlight_value -= 50;
+                    CardList.get(a).canbuyornot = 0;
                     nut.clear();
                 }
             }
-            if (cardList.get(a).cardName.equals("nut") && cardList.get(a).if_pressed(x, y) && sunlightValue >= 50) {
-                cardList.get(a).canBuyOrNot++;
-                cardList.get(a).canBuyOrNot %= 2;
+            if (CardList.get(a).cardname.equals("nut") && CardList.get(a).if_pressed(x, y) && sunlight_value >= 50) {
+                CardList.get(a).canbuyornot++;
+                CardList.get(a).canbuyornot %= 2;
                 if (nut == null) nut = new Plants(2, x, y, 3);
                 else nut.nut_put();
             }
             //===================iceshooter===========================================
-            if (cardList.get(a).cardName.equals("iceshooter") && cardList.get(a).canBuyOrNot == 1) {
+            if (CardList.get(a).cardname.equals("iceshooter") && CardList.get(a).canbuyornot == 1) {
                 int ah = (y - 81) / 100;
                 int al = (x - 34) / 80;
 
                 Plants newice = new Plants(3, al * 80, ah * 100);
                 if (plants[ah][al] == null) {
                     plants[ah][al] = newice;
-                    sunlightValue -= 150;
-                    cardList.get(a).canBuyOrNot = 0;
+                    sunlight_value -= 150;
+                    CardList.get(a).canbuyornot = 0;
                     ice_peashooter.clear();
                 }
             }
-            if (cardList.get(a).cardName.equals("iceshooter") && cardList.get(a).if_pressed(x, y) && sunlightValue >= 150) {
-                cardList.get(a).canBuyOrNot++;
-                cardList.get(a).canBuyOrNot %= 2;
+            if (CardList.get(a).cardname.equals("iceshooter") && CardList.get(a).if_pressed(x, y) && sunlight_value >= 150) {
+                CardList.get(a).canbuyornot++;
+                CardList.get(a).canbuyornot %= 2;
                 if (ice_peashooter == null) ice_peashooter = new Plants(3, x, y, 3);
                 else ice_peashooter.ice_put();
             }
             //=================sunflower=======================================
-            if (cardList.get(a).cardName.equals("sunflower") && cardList.get(a).canBuyOrNot == 1) {
+            if (CardList.get(a).cardname.equals("sunflower") && CardList.get(a).canbuyornot == 1) {
                 int ah = (y - 81) / 100;
                 int al = (x - 34) / 80;
 
                 Plants newsun = new Plants(1, al * 80, ah * 100);
                 if (plants[ah][al] == null) {
                     plants[ah][al] = newsun;
-                    sunlightValue -= 25;
-                    cardList.get(a).canBuyOrNot = 0;
+                    sunlight_value -= 25;
+                    CardList.get(a).canbuyornot = 0;
                     sunflower.clear();
                 }
             }
-            if (cardList.get(a).cardName.equals("sunflower") && cardList.get(a).if_pressed(x, y) && sunlightValue >= 25) {
-                cardList.get(a).canBuyOrNot++;
-                cardList.get(a).canBuyOrNot %= 2;
+            if (CardList.get(a).cardname.equals("sunflower") && CardList.get(a).if_pressed(x, y) && sunlight_value >= 25) {
+                CardList.get(a).canbuyornot++;
+                CardList.get(a).canbuyornot %= 2;
                 if (sunflower == null) sunflower = new Plants(1, x, y, 3);
                 else sunflower.sun_put();
             }
 
             //=======================peashooter=========================
-            if (cardList.get(a).cardName.equals("peashooter") && cardList.get(a).canBuyOrNot == 1) {
+            if (CardList.get(a).cardname.equals("peashooter") && CardList.get(a).canbuyornot == 1) {
                 int ah = (y - 81) / 100;
                 int al = (x - 34) / 80;
 
                 Plants newpes = new Plants(0, al * 80, ah * 100);
                 if (plants[ah][al] == null) {
                     plants[ah][al] = newpes;
-                    sunlightValue -= 100;
-                    cardList.get(a).canBuyOrNot = 0;
+                    sunlight_value -= 100;
+                    CardList.get(a).canbuyornot = 0;
                     peashooter.clear();
                 }
             }
-            if (cardList.get(a).cardName.equals("peashooter") && cardList.get(a).if_pressed(x, y) && sunlightValue >= 100) {
-                cardList.get(a).canBuyOrNot++;
-                cardList.get(a).canBuyOrNot %= 2;
+            if (CardList.get(a).cardname.equals("peashooter") && CardList.get(a).if_pressed(x, y) && sunlight_value >= 100) {
+                CardList.get(a).canbuyornot++;
+                CardList.get(a).canbuyornot %= 2;
                 if (peashooter == null) peashooter = new Plants(0, x, y, 3);
                 else peashooter.shooter_put();
             }
         }
 
         //========================================sunlight======================================
-        for (int g = 0; g < sunList.size(); g++) {
+        for (int g = 0; g < SunList.size(); g++) {
 
-            if (sunList.get(g).ifclicked(x, y)) {
-                sunList.remove(g);
-                sunlightValue += 25;
+            if (SunList.get(g).ifclicked(x, y)) {
+                SunList.remove(g);
+                sunlight_value += 25;
             }
         }
         if (new Rectangle(785, 0, 50, 50).contains(x, y)) {
@@ -194,30 +196,30 @@ public class GameField {
     }
 
     public void gamepanel(Graphics g) {
-        background.runBackground(g);  //Background
+        background.runbackground(g);  //Background
 
-        if (sunlightValue >= 25) {
-            cardList.get(0).showinshop_canbuy(g);
+        if (sunlight_value >= 25) {
+            CardList.get(0).showinshop_canbuy(g);
         } else {
-            cardList.get(0).showinshop_cannotbuy(g);
+            CardList.get(0).showinshop_cannotbuy(g);
         }
 
-        if (sunlightValue >= 100) {
-            cardList.get(1).showinshop_canbuy(g);
+        if (sunlight_value >= 100) {
+            CardList.get(1).showinshop_canbuy(g);
         } else {
-            cardList.get(1).showinshop_cannotbuy(g);
+            CardList.get(1).showinshop_cannotbuy(g);
         }
 
-        if (sunlightValue >= 50) {
-            cardList.get(2).showinshop_canbuy(g);
+        if (sunlight_value >= 50) {
+            CardList.get(2).showinshop_canbuy(g);
         } else {
-            cardList.get(2).showinshop_cannotbuy(g);
+            CardList.get(2).showinshop_cannotbuy(g);
         }
 
-        if (sunlightValue >= 150) {
-            cardList.get(3).showinshop_canbuy(g);
+        if (sunlight_value >= 150) {
+            CardList.get(3).showinshop_canbuy(g);
         } else {
-            cardList.get(3).showinshop_cannotbuy(g);
+            CardList.get(3).showinshop_cannotbuy(g);
         }
 
         for (int h = 0; h < 6; h++) {
@@ -234,67 +236,67 @@ public class GameField {
         if (nut != null) nut.nut_put_show(g);
         if (ice_peashooter != null) ice_peashooter.ice_put_show(g);
         //=================zombie==============================
-        for (int a = 0; a < zombieList.size(); a++) {
-            zombieList.get(a).show(g);
+        for (int a = 0; a < ZombieList.size(); a++) {
+            ZombieList.get(a).show(g);
         }
         //=================bullet==============================
-        for (int a = 0; a < bulletList.size(); a++) {
-            bulletList.get(a).image(g);
+        for (int a = 0; a < BulletList.size(); a++) {
+            BulletList.get(a).image(g);
         }
-        for (int a = 0; a < iceBulletList.size(); a++) {
-            iceBulletList.get(a).image(g);
+        for (int a = 0; a < IceBulletList.size(); a++) {
+            IceBulletList.get(a).image(g);
         }
 
         //================sunlight====================================
-        for (int ge = 0; ge <= sunList.size() - 1; ge = ge + 1) {
-            sunList.get(ge).paintComponent(g);
+        for (int ge = 0; ge <= SunList.size() - 1; ge = ge + 1) {
+            SunList.get(ge).paintComponent(g);
         }
         g.setFont(new Font("Serif Bold", 0, 15));
-        g.drawString("" + sunlightValue, 40, 80);
+        g.drawString("" + sunlight_value, 40, 80);
     }
 
     public void timer() throws Exception {
-        if (new Random().nextInt(2400) < zombieRandomNumber && zombiesNumber > 0) {
+        if (new Random().nextInt(2400) < zombie_random_number && zombies_number > 0) {
             int x = 800;
             int y = 100 * new Random().nextInt(6);
             Zombie newzombie = new NormalZombie(x, y);
-            zombieList.add(newzombie);
-            zombiesNumber--;
+            ZombieList.add(newzombie);
+            zombies_number--;
         }
-        if (new Random().nextInt(2400) < zombieRandomNumber && zombiesNumber > 0) {
+        if (new Random().nextInt(2400) < zombie_random_number && zombies_number > 0) {
             int x = 800;
             int y = 100 * new Random().nextInt(6);
             Zombie newzombie = new RedZombie(x, y);
-            zombieList.add(newzombie);
-            zombiesNumber--;
+            ZombieList.add(newzombie);
+            zombies_number--;
         }
-        if (new Random().nextInt(2400) < zombieRandomNumber && zombiesNumber > 0) {
+        if (new Random().nextInt(2400) < zombie_random_number && zombies_number > 0) {
             int x = 800;
             int y = 100 * new Random().nextInt(6);
             YellowZombie newzombie = new YellowZombie(x, y);
-            zombieList.add(newzombie);
-            zombiesNumber--;
+            ZombieList.add(newzombie);
+            zombies_number--;
         }
-        if (new Random().nextInt(2400) < zombieRandomNumber && zombiesNumber > 0) {
+        if (new Random().nextInt(2400) < zombie_random_number && zombies_number > 0) {
             int x = 800;
             int y = 100 * new Random().nextInt(6);
             Zombie newzombie = new DarkZombie(x, y);
-            zombieList.add(newzombie);
-            zombiesNumber--;
+            ZombieList.add(newzombie);
+            zombies_number--;
         }
 
-        for (int x = 0; x <= bulletList.size() - 1; x++) {
-            bulletList.get(x).Action(zombieList);
+        for (int x = 0; x <= BulletList.size() - 1; x++) {
+            BulletList.get(x).Action(ZombieList);
         }
-        for (int x = 0; x <= iceBulletList.size() - 1; x++) {
-            iceBulletList.get(x).Action(zombieList);
+        for (int x = 0; x <= IceBulletList.size() - 1; x++) {
+            IceBulletList.get(x).Action(ZombieList);
         }
 
         for (int h = 0; h < 6; h++) {
             for (int l = 0; l < 9; l++) {
                 if (plants[h][l] != null) {
 
-                    plants[h][l].action(bulletList, iceBulletList, sunList);
+                    plants[h][l].action(BulletList, IceBulletList, SunList);
                     ;
                     if (plants[h][l].state == 2)
 
@@ -303,19 +305,19 @@ public class GameField {
             }
         }
 
-        for (int x = 0; x <= zombieList.size() - 1; x++) {
-            zombieList.get(x).action(plants);
-            if (zombieList.get(x).getstate() == 4) {
-                zombieDieNumber++;
-                zombieList.remove(x);
+        for (int x = 0; x <= ZombieList.size() - 1; x++) {
+            ZombieList.get(x).action(plants);
+            if (ZombieList.get(x).getstate() == 4) {
+                zombie_die_number++;
+                ZombieList.remove(x);
 
             }
 
         }
 
-        for (int x = 0; x <= zombieList.size() - 1; x++) {
+        for (int x = 0; x <= ZombieList.size() - 1; x++) {
 
-            if (zombieList.get(x).getx() < -220) {
+            if (ZombieList.get(x).getx() < -220) {
 
 
                 BGM.StopPlay_BGM();
@@ -331,7 +333,7 @@ public class GameField {
 
             }
         }
-        if (zombieDieNumber == zombiesNumber) {
+        if (zombie_die_number == Zombie_Number) {
             BGM.StopPlay_BGM();
 
             SoundAndMusic a = new SoundAndMusic(MusicConfig.win);
@@ -346,17 +348,15 @@ public class GameField {
 
         if (new Random().nextInt(600) < 7) {
             Sun sl = new Sun();
-            sunList.add(sl);
+            SunList.add(sl);
         }
-        for (int ge = 0; ge <= sunList.size() - 1; ge = ge + 1) {
-            sunList.get(ge).drop();
+        for (int ge = 0; ge <= SunList.size() - 1; ge = ge + 1) {
+            SunList.get(ge).drop();
 
-            if (sunList.get(ge).state == 2) {
-                sunList.remove(ge);
+            if (SunList.get(ge).state == 2) {
+                SunList.remove(ge);
             }
         }
 
     }
 }
-
-

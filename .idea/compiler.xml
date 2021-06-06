@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="PlantsVsZombies" />
         <module name="project-team03" />
+        <module name="project-team03-255d6726cb7f4da8ad7db155976c330ac0837305" />
       </profile>
     </annotationProcessing>
   </component>

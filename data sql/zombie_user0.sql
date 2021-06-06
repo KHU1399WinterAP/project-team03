@@ -1,10 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.23, for Win64 (x86_64)
 --
-<<<<<<< HEAD
 -- Host: 127.0.0.1    config.Database: zombie
-=======
--- Host: 127.0.0.1    Config.Database: zombie
->>>>>>> master
 -- ------------------------------------------------------
 -- Server version	8.0.23
 

@@ -5,11 +5,7 @@
  */
 package gui;
 
-<<<<<<< HEAD
 import config.ImageConfig;
-=======
-import Config.ImageConfig;
->>>>>>> master
 
 /**
  *
@@ -18,11 +14,7 @@ import Config.ImageConfig;
 public class DieField extends javax.swing.JFrame {
 
     /**
-<<<<<<< HEAD
      * Creates new form DieField
-=======
-     * Creates new form DieField1
->>>>>>> master
      */
     public DieField() {
         initComponents();
@@ -37,15 +29,11 @@ public class DieField extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<<<<<<< HEAD
         jPanel1 = new javax.swing.JPanel();
-=======
->>>>>>> master
         backButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-<<<<<<< HEAD
         setTitle("DieField");
         setPreferredSize(new java.awt.Dimension(942, 633));
 
@@ -54,20 +42,11 @@ public class DieField extends javax.swing.JFrame {
         backButton.setFont(new java.awt.Font("Roboto Slab Black", 1, 36)); // NOI18N
         backButton.setForeground(new java.awt.Color(153, 0, 0));
         backButton.setText("Back to Main Menu");
-=======
-        setMaximumSize(new java.awt.Dimension(981, 590));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        backButton.setFont(new java.awt.Font("Oswald", 2, 36)); // NOI18N
-        backButton.setForeground(new java.awt.Color(0, 0, 153));
-        backButton.setText("Back to MainMenu");
->>>>>>> master
         backButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backButtonMouseClicked(evt);
             }
         });
-<<<<<<< HEAD
         jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, 480, 90));
         backButton.getAccessibleContext().setAccessibleName("");
 
@@ -84,12 +63,6 @@ public class DieField extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-=======
-        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 420, 390, 80));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(ImageConfig.dieField))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 590));
->>>>>>> master
 
         pack();
         setLocationRelativeTo(null);
@@ -104,7 +77,6 @@ public class DieField extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-<<<<<<< HEAD
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -136,46 +108,10 @@ public class DieField extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-=======
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DieField.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DieField.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DieField.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DieField.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new DieField().setVisible(true);
-            }
-        });
-    }
->>>>>>> master
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
-<<<<<<< HEAD
     private javax.swing.JPanel jPanel1;
-=======
->>>>>>> master
     // End of variables declaration//GEN-END:variables
 }

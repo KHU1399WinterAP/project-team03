@@ -1,6 +1,6 @@
 package animations;
 
-import Config.ImageConfig;
+import config.ImageConfig;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,10 +9,10 @@ import java.util.ArrayList;
 public class Plants {
     public int x;
     public int y;
-    public int page;
-    public int health;
-    public int timer;
-    public int type;
+    int page;
+    int health;
+    int timer;
+    int type;
     public int state;
 
     public Plants() {
@@ -66,7 +66,7 @@ public class Plants {
     }
 
     public void shooter_move_show(Graphics g) {
-        g.drawImage((new ImageIcon(ImageConfig.peashooterFrame + page + ".png")).getImage(), 34 + x, 81 + y, null);
+        g.drawImage((new ImageIcon(ImageConfig.peashooterImage + page + ".png")).getImage(), 34 + x, 81 + y, null);
     }
 
     public void shooter_move_anime(ArrayList<Bullet> BulletList) {
@@ -81,254 +81,230 @@ public class Plants {
         }
 
     }
+
     public void shooter_put() {
-        state=3;
+        state = 3;
     }
-    public void shopter_put_show(Graphics  g) {
-        if(state==3)
-        {
-            Image tu = (new ImageIcon(ImageConfig.peashooterFrame2)).getImage();
-            g.drawImage(tu,x, y, null);
-            Image tu1 = (new ImageIcon(ImageConfig.plantPutPea)).getImage();
-            g.drawImage(tu1,34+((x-34)/80)*80, 81+((y-81)/100)*100, null);
+
+    public void shopter_put_show(Graphics g) {
+        if (state == 3) {
+            Image tu = (new ImageIcon(ImageConfig.peashooter)).getImage();
+            g.drawImage(tu, x, y, null);
+            Image tu1 = (new ImageIcon(ImageConfig.plantPutPeashooterImage)).getImage();
+            g.drawImage(tu1, 34 + ((x - 34) / 80) * 80, 81 + ((y - 81) / 100) * 100, null);
         }
     }
+
     public void ice_move() {
-        health=170;
-        state=1;
+        health = 170;
+        state = 1;
     }
+
     public void ice_move_show(Graphics g) {
-        g.drawImage((new ImageIcon(ImageConfig.icePeashooterFrame+page+".png")).getImage(),34 +x, 81+y, null);
+        g.drawImage((new ImageIcon(ImageConfig.icePeashooterImage + page + ".png")).getImage(), 34 + x, 81 + y, null);
     }
+
     public void ice_move_anime(ArrayList<IceBullet> IceBulletList) {
-        if(page==14) page=0;
+        if (page == 14) page = 0;
         else page++;
-        if (health<=0) clear();
+        if (health <= 0) clear();
         shooter_timer();
-        if(shooter_timer_over()) {
-            IceBullet newbullet=new IceBullet(x,y);
+        if (shooter_timer_over()) {
+            IceBullet newbullet = new IceBullet(x, y);
             IceBulletList.add(newbullet);
-            timer=0;
+            timer = 0;
         }
 
     }
+
     public void ice_put() {
-        state=3;
+        state = 3;
     }
-    public void ice_put_show(Graphics  g) {
-        if(state==3)
-        {
-            Image tu = (new ImageIcon(ImageConfig.icePeashooterFrame2)).getImage();
-            g.drawImage(tu,x, y, null);
-            Image tu1 = (new ImageIcon(ImageConfig.plantPutIce)).getImage();
-            g.drawImage(tu1,34+((x-34)/80)*80, 81+((y-81)/100)*100, null);
+
+    public void ice_put_show(Graphics g) {
+        if (state == 3) {
+            Image tu = (new ImageIcon(ImageConfig.icePeashooter)).getImage();
+            g.drawImage(tu, x, y, null);
+            Image tu1 = (new ImageIcon(ImageConfig.icePlantPutImage)).getImage();
+            g.drawImage(tu1, 34 + ((x - 34) / 80) * 80, 81 + ((y - 81) / 100) * 100, null);
         }
     }
+
     public void sun_move() {
-        health=170;
-        state=1;
+        health = 170;
+        state = 1;
     }
+
     public void sun_move_show(Graphics g) {
-        g.drawImage((new ImageIcon(ImageConfig.sunflowerFrame+page+".png")).getImage(),34 +x, 81+y, null);
+        g.drawImage((new ImageIcon(ImageConfig.sunflowerFrame + page + ".png")).getImage(), 34 + x, 81 + y, null);
     }
+
     public void sun_move_anime(ArrayList<Sun> SunList) {
-        if(page==17) page=0;
+        if (page == 17) page = 0;
         else page++;
-        if (health<=0) clear();
+        if (health <= 0) clear();
         sun_timer();
-        if(sun_timer_over()) {
-            Sun newsun=new Sun(x,y);
+        if (sun_timer_over()) {
+            Sun newsun = new Sun(x, y);
             SunList.add(newsun);
-            timer=0;
+            timer = 0;
         }
 
     }
+
     public void sun_put() {
-        state=3;
+        state = 3;
     }
-    public void sun_put_show(Graphics  g) {
-        if(state==3)
-        {
-            Image tu = (new ImageIcon(ImageConfig.sunflowerFrame2)).getImage();
-            g.drawImage(tu,x, y, null);
+
+    public void sun_put_show(Graphics g) {
+        if (state == 3) {
+            Image tu = (new ImageIcon(ImageConfig.sunflower)).getImage();
+            g.drawImage(tu, x, y, null);
             Image tu1 = (new ImageIcon(ImageConfig.plantPutSun)).getImage();
-            g.drawImage(tu1,34+((x-34)/80)*80, 81+((y-81)/100)*100, null);
+            g.drawImage(tu1, 34 + ((x - 34) / 80) * 80, 81 + ((y - 81) / 100) * 100, null);
         }
     }
+
     public void sun_timer() {
         timer++;
     }
+
     public boolean sun_timer_over() {
-        return timer>83;
+        return timer > 83;
     }
+
     public void nut_health() {
-        state=1;
-        health=340;
-    }
-    private void nut_health_show(Graphics g)
-    {
-
-        g.drawImage((new ImageIcon(ImageConfig.nutFrame+page+".png")).getImage(),34 +x, 81+y, null);
+        state = 1;
+        health = 340;
     }
 
-    private void nut_health_move()
-    {
-        if(page==15)
-        {
-            page=0;
-        }
-        else
-        {
+    private void nut_health_show(Graphics g) {
+
+        g.drawImage((new ImageIcon(ImageConfig.nut1Frame + page + ".png")).getImage(), 34 + x, 81 + y, null);
+    }
+
+    private void nut_health_move() {
+        if (page == 15) {
+            page = 0;
+        } else {
             page++;
         }
 
-        if( health<=200 )
-        {
+        if (health <= 200) {
             nut_hurt();
         }
     }
+
     private void nut_hurt() {
-        state=4;
-        page=0;
-    }
-    private void nut_hurt_show(Graphics g)
-    {
-
-        g.drawImage((new ImageIcon(ImageConfig.nut2Frame+page+".png")).getImage(),34 +x, 81+y, null);
+        state = 4;
+        page = 0;
     }
 
-    private void nut_hurt_move()
-    {
-        if(page==10)
-        {
-            page=0;
-        }
-        else
-        {
+    private void nut_hurt_show(Graphics g) {
+
+        g.drawImage((new ImageIcon(ImageConfig.nut2Frame + page + ".png")).getImage(), 34 + x, 81 + y, null);
+    }
+
+    private void nut_hurt_move() {
+        if (page == 10) {
+            page = 0;
+        } else {
             page++;
         }
 
-        if( health<=100 )
-        {
+        if (health <= 100) {
             nut_badhurt();
         }
     }
 
     private void nut_badhurt() {
-        state=5;
-        page=0;
-    }
-    private void nut_badhurt_show(Graphics g)
-    {
-
-        g.drawImage((new ImageIcon(ImageConfig.nut3Frame+page+".png")).getImage(),34 +x, 81+y, null);
+        state = 5;
+        page = 0;
     }
 
-    private void nut_badhurt_move()
-    {
-        if(page==14)
-        {
-            page=0;
-        }
-        else
-        {
+    private void nut_badhurt_show(Graphics g) {
+
+        g.drawImage((new ImageIcon(ImageConfig.nut3Frame + page + ".png")).getImage(), 34 + x, 81 + y, null);
+    }
+
+    private void nut_badhurt_move() {
+        if (page == 14) {
+            page = 0;
+        } else {
             page++;
         }
 
-        if( health<=0 )
-        {
+        if (health <= 0) {
             clear();
         }
     }
+
     public void nut_put() {
-        state=3;
-    }
-    public void nut_put_show(Graphics  g) {
-        if(state==3)
-        {
-            Image tu = (new ImageIcon(ImageConfig.nut1Frame2)).getImage();
-            g.drawImage(tu,x, y, null);
-            Image tu1 = (new ImageIcon(ImageConfig.plantPutNut)).getImage();
-            g.drawImage(tu1,34+((x-34)/80)*80, 81+((y-81)/100)*100, null);
-        }
+        state = 3;
     }
 
-    void nut_show(Graphics g)
-    {
-        if(state==1)
-        {
-            nut_health_show(g);
-        }
-        if(state==4)
-        {
-            nut_hurt_show(g);
-        }
-        if(state==5)
-        {
-            nut_badhurt_show(g);
+    public void nut_put_show(Graphics g) {
+        if (state == 3) {
+            Image tu = (new ImageIcon(ImageConfig.nut1)).getImage();
+            g.drawImage(tu, x, y, null);
+            Image tu1 = (new ImageIcon(ImageConfig.plantPutSunImage)).getImage();
+            g.drawImage(tu1, 34 + ((x - 34) / 80) * 80, 81 + ((y - 81) / 100) * 100, null);
         }
     }
 
-    public void nut_action()
-    {
-        if(state==1)
-        {
-            nut_health_move();
+    void nut_show(Graphics g) {
+        switch(state){
+            case 1:
+                nut_health_show(g);
+            case 4:
+                nut_hurt_show(g);
+            case 5:
+                nut_badhurt_show(g);
         }
-        if(state==4)
-        {
-            nut_hurt_move();
-        }
-        if(state==5)
-        {
-            nut_badhurt_move();
-        }
+    }
 
+    public void nut_action() {
+        switch (state){
+            case 1:
+                nut_health_move();
+            case 4:
+                nut_hurt_move();
+            case 5:
+                nut_badhurt_move();
+        }
     }
 
     public void put_disappear() {
-        state=2;
+        state = 2;
     }
+
     public void put() {
-        state=3;
+        state = 3;
     }
-    public void show(Graphics g)
-    {
-        if(type==0)
-        {
-            shooter_move_show(g);
-        }
-        if(type==1)
-        {
-            sun_move_show(g);
-        }
-        if(type==2)
-        {
-            nut_show(g);
-        }
-        if(type==3)
-        {
-            ice_move_show(g);
+
+    public void show(Graphics g) {
+        switch (type){
+            case 0:
+                shooter_move_show(g);
+            case 1:
+                sun_move_show(g);
+            case 2:
+                nut_show(g);
+            case 3:
+                ice_move_show(g);
         }
     }
 
-    public void action(ArrayList<Bullet> BulletList,ArrayList<IceBullet> IceBulletList,ArrayList<Sun> SunList)
-    {
-        if(type==0)
-        {
-            shooter_move_anime(BulletList);
-        }
-        if(type==1)
-        {
-            sun_move_anime(SunList);
-        }
-        if(type==2)
-        {
-            nut_action();
-        }
-        if(type==3)
-        {
-            ice_move_anime(IceBulletList);
+    public void action(ArrayList<Bullet> BulletList, ArrayList<IceBullet> IceBulletList, ArrayList<Sun> SunList) {
+        switch (type){
+            case 0:
+                shooter_move_anime(BulletList);
+            case 1:
+                sun_move_anime(SunList);
+            case 2:
+                nut_action();
+            case 3:
+                ice_move_anime(IceBulletList);
         }
     }
 

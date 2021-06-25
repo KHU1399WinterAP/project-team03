@@ -3,7 +3,7 @@
 Implemented a complete and functioning game inspired by Plants vs Zombies in java, comprising of 3 Levels. The game was developed using Java and employs multithreading, and a handful of design patterns.
 ## Getting Started
 This project is not a standalone executable and thus requires the latest JDK to be installed on system before you run the game, Thus use a IDE for doing the same. (Preferably IntelliJ - in which it was originally designed and developed)
-## Screenshots from the game
+## Screenshots from the game (Please wait for load all pictures)
 ![GamePlay](https://github.com/KHU1399WinterAP/project-team03/blob/master/src/main/resources/Image/GamePlayScreenshots/1.PNG)
 ![GamePlay](https://github.com/KHU1399WinterAP/project-team03/blob/master/src/main/resources/Image/GamePlayScreenshots/3.PNG)
 ![GamePlay](https://github.com/KHU1399WinterAP/project-team03/blob/master/src/main/resources/Image/GamePlayScreenshots/4.PNG)

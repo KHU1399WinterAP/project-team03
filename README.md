@@ -10,7 +10,11 @@ To play the game, the following steps can be followed:
 1. Clone this repository using the command: `git clone https://github.com/KHU1399WinterAP/project-team03.git`
 2. Download the JDK 15.0.2 from [here](https://www.techspot.com/downloads/5552-java-15-jdk.html) and install it
 3. Download the MYSQL from [here](https://dev.mysql.com/downloads/installer/) and install it
+<<<<<<< HEAD
 4. in MYSQL import file `data sql/zombie_user.sql`
+=======
+4. in MYSQL import file `data sql/`
+>>>>>>> 1ad613d7f16a32cfb282d1dcb73c6bcd407c38ad
 5. run `src/java/app/MainMenu.java`
 ## Code and assets
 Path to code: `PlantVsZombies/src/` <br>
@@ -19,4 +23,7 @@ Path to Images and sounds: `project-team03/Image or Music`
 - Java
 - ## Author
 - Mohammad Danaee
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1ad613d7f16a32cfb282d1dcb73c6bcd407c38ad

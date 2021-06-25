@@ -13,8 +13,6 @@ public class IceBullet {
     int y;
     int state;//1fly 2disappear
 
-    public IceBullet() {
-    }
     public IceBullet(int x,int y) {
         this.x=x;this.y=y;
         fly();

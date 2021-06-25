@@ -5,7 +5,6 @@ Implemented a complete and functioning game inspired by Plants vs Zombies in jav
 This project is not a standalone executable and thus requires the latest JDK to be installed on system before you run the game, Thus use a IDE for doing the same. (Preferably IntelliJ - in which it was originally designed and developed)
 ## Screenshots from the game
 ![GamePlay](https://github.com/KHU1399WinterAP/project-team03/blob/master/src/main/resources/Image/GamePlayScreenshots/1.PNG)
-![GamePlay](https://github.com/KHU1399WinterAP/project-team03/blob/master/src/main/resources/Image/GamePlayScreenshots/2.PNG)
 ![GamePlay](https://github.com/KHU1399WinterAP/project-team03/blob/master/src/main/resources/Image/GamePlayScreenshots/3.PNG)
 ![GamePlay](https://github.com/KHU1399WinterAP/project-team03/blob/master/src/main/resources/Image/GamePlayScreenshots/4.PNG)
 ![GamePlay](https://github.com/KHU1399WinterAP/project-team03/blob/master/src/main/resources/Image/GamePlayScreenshots/5.PNG)
